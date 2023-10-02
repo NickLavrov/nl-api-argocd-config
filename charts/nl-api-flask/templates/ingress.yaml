@@ -1,7 +1,6 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  namespace: nl-api-flask
   name: nl-api-flask
   annotations:
     alb.ingress.kubernetes.io/scheme: internet-facing
