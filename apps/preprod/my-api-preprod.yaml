@@ -13,7 +13,7 @@ spec:
       valuesObject:
         clusterName: nl-api-preprod
         serviceAccount:
-          create: false
+          create: "false"
           name: aws-load-balancer-controller
   destination:
     server: https://kubernetes.default.svc
