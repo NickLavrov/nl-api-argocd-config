@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nl-api-flask
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nl-api-flask
+  template:
+    metadata:
+      labels:
+        app: nl-api-flask
+    spec:
+      containers:
+        - name: nl-api-flask
+          image: 825391943801.dkr.ecr.us-west-2.amazonaws.com/nl-api-flask:v0
+          livenessProbe:
+            httpGet:
+              path: /ping
+              port: 5000
+            initialDelaySeconds: 3
+            periodSeconds: 5
+          readinessProbe:
+            httpGet:
+              path: /ping
+              port: 5000
+            initialDelaySeconds: 3
+            periodSeconds: 5
+      imagePullSecrets:
+        - name: aws-ecr-credentials

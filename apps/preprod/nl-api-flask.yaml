@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nl-api-flask
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: "https://github.com/NickLavrov/nl-api-argocd-config.git"
+    targetRevision: main
+    path: charts/nl-api-flask
+    helm:
+      valueFiles:
+        - ../../../environments/preprod/nl-api-flask/values.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: kube-system
+  syncPolicy:
+    automated: {}

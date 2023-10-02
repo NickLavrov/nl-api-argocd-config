@@ -1,0 +1,5 @@
+apiVersion: v2
+name: nl-api-flask
+description: A Helm chart to deploy the nl-api-flask service
+version: 0.1.0
+appVersion: 1.0.0
