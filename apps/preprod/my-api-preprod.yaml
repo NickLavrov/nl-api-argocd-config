@@ -6,16 +6,15 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: "https://github.com/NickLavrov/nl-api-argocd-config.git"
-    path: environments/preprod/my-api
-    helm:
-      valueFiles:
-        - values.yaml
-      repositories:
-        - name: eks
-          url: https://aws.github.io/eks-charts
+    repoURL: https://aws.github.io/eks-charts
     chart: aws-load-balancer-controller
     targetRevision: 1.6.1
+    helm:
+      valuesObject:
+        clusterName: nl-api-preprod
+        serviceAccount:
+          create: false
+          name: aws-load-balancer-controller
   destination:
     server: https://kubernetes.default.svc
     namespace: "{{`{{namespace}}`}}"
