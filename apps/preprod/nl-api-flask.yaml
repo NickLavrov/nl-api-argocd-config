@@ -11,7 +11,7 @@ spec:
     path: charts/nl-api-flask
     helm:
       valueFiles:
-        - ../../../environments/preprod/nl-api-flask/values.yaml
+        - ../../environments/preprod/nl-api-flask/values.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: kube-system
