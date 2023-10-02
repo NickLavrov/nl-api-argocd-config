@@ -13,7 +13,8 @@ spec:
       values: |
         clusterName: nl-api-preprod
         serviceAccount:
-          create: "false"
+          annotations:
+            eks.amazonaws.com/role-arn: arn:aws:iam::825391943801:role/AmazonEKSLoadBalancerControllerRole
           name: aws-load-balancer-controller
   destination:
     server: https://kubernetes.default.svc
