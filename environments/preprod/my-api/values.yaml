@@ -1,0 +1,5 @@
+# Your Helm values overrides for the my-api service in preprod environment.
+clusterName: nl-api-preprod
+serviceAccount:
+  create: false
+  name: aws-load-balancer-controller

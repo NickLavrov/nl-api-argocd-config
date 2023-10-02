@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: all-apps-preprod
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: "https://github.com/NickLavrov/nl-api-argocd-config.git"
+    path: apps/preprod
+  destination:
+    server: "{{url}}"
+    namespace: "{{`{{namespace}}`}}"
+  syncPolicy:
+    automated: {}
