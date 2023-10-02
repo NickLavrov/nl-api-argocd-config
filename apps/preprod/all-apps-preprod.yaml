@@ -7,6 +7,7 @@ spec:
   project: default
   source:
     repoURL: "https://github.com/NickLavrov/nl-api-argocd-config.git"
+    targetRevision: main
     path: apps/preprod
   destination:
     server: "{{url}}"

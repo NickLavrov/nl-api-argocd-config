@@ -13,7 +13,7 @@ spec:
       valueFiles:
         - "environments/preprod/my-api/values.yaml"
   destination:
-    server: "{{url}}"
+    server: https://kubernetes.default.svc
     namespace: "{{`{{namespace}}`}}"
   syncPolicy:
     automated: {}
