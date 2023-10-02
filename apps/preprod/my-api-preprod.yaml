@@ -17,6 +17,6 @@ spec:
           name: aws-load-balancer-controller
   destination:
     server: https://kubernetes.default.svc
-    namespace: "{{`{{namespace}}`}}"
+    namespace: kube-system
   syncPolicy:
     automated: {}

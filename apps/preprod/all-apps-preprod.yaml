@@ -11,6 +11,6 @@ spec:
     path: apps/preprod
   destination:
     server: https://kubernetes.default.svc
-    namespace: "{{`{{namespace}}`}}"
+    namespace: argocd
   syncPolicy:
     automated: {}
