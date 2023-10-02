@@ -10,7 +10,7 @@ spec:
     targetRevision: main
     path: apps/preprod
   destination:
-    server: "{{url}}"
+    server: https://kubernetes.default.svc
     namespace: "{{`{{namespace}}`}}"
   syncPolicy:
     automated: {}
