@@ -10,7 +10,7 @@ spec:
     chart: aws-load-balancer-controller
     targetRevision: 1.6.1
     helm:
-      valuesObject:
+      values: |
         clusterName: nl-api-preprod
         serviceAccount:
           create: "false"
