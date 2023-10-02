@@ -3,6 +3,7 @@ kind: Ingress
 metadata:
   name: nl-api-flask
   annotations:
+    alb.ingress.kubernetes.io/healthcheck-path: /ping
     alb.ingress.kubernetes.io/scheme: internet-facing
 spec:
   ingressClassName: alb
