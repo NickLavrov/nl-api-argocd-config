@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: "https://github.com/NickLavrov/nl-api-argocd-config.git"
-    targetRevision: main
+    targetRevision: preprod
     path: apps/preprod
   destination:
     server: https://kubernetes.default.svc
