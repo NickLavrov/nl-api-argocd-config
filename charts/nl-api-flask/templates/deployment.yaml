@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: nl-api-flask
-          image: 825391943801.dkr.ecr.us-west-2.amazonaws.com/nl-api-flask:v0
+          image: 825391943801.dkr.ecr.us-west-2.amazonaws.com/nl-api-flask:51dfa5a
           livenessProbe:
             httpGet:
               path: /ping
