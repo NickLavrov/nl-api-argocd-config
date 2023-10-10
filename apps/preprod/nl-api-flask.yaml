@@ -12,8 +12,9 @@ spec:
     targetRevision: preprod
     path: charts/nl-api-flask
     helm:
-      valueFiles:
-        - ../../environments/preprod/nl-api-flask/values.yaml
+      values: |
+        image:
+          tag: f644fea
   destination:
     server: https://kubernetes.default.svc
     namespace: kube-system
