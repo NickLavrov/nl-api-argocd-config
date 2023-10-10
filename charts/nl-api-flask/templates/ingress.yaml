@@ -3,6 +3,7 @@ kind: Ingress
 metadata:
   name: nl-api-flask
   annotations:
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-west-2:825391943801:certificate/13164f6c-0ce4-4c86-b597-1d2b451e4184
     alb.ingress.kubernetes.io/healthcheck-path: /ping
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS":443}]'
     alb.ingress.kubernetes.io/scheme: internet-facing
