@@ -1,1 +1,3 @@
-a: b
+image:
+  repository: "825391943801.dkr.ecr.us-west-2.amazonaws.com/nl-api-flask"
+  tag: "51dfa5a"
