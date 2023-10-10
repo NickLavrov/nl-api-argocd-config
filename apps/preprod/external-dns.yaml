@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: external-dns
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    repoURL: https://charts.bitnami.com/bitnami
+    chart: external-dns
+    targetRevision: 6.26.4
+    helm:
+      values: |
+        aws:
+          zoneType: public
+        serviceAccount:
+          annotations:
+            eks.amazonaws.com/role-arn: arn:aws:iam::825391943801:role/external-dns-preprod
+          name: external-dns
+        podSecurityContext:
+          fsGroup: 65534
+          runAsUser: 0
+        txtOwnerId: external-dns-nl-api-preprod
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: external-dns
+  syncPolicy:
+    automated: {}
