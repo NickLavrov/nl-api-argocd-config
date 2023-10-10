@@ -20,3 +20,7 @@ spec:
                 name: nl-api-flask
                 port:
                   number: 80
+  tls:
+    - hosts:
+      - aaa.nicklavrov.com
+      secretName: aaa-nicklavrov-com-cert
