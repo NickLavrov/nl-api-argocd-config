@@ -15,16 +15,20 @@ spec:
       values: |
         aws:
           zoneType: public
+        podSecurityContext:
+          fsGroup: 65534
+          runAsUser: 0
         serviceAccount:
           annotations:
             eks.amazonaws.com/role-arn: arn:aws:iam::825391943801:role/external-dns-preprod
           name: external-dns
-        podSecurityContext:
-          fsGroup: 65534
-          runAsUser: 0
+        sources:
+          - ingress
         txtOwnerId: external-dns-nl-api-preprod
   destination:
     server: https://kubernetes.default.svc
     namespace: external-dns
   syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
     automated: {}
