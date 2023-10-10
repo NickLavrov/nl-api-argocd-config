@@ -14,6 +14,7 @@ spec:
     helm:
       values: |
         clusterName: nl-api-preprod
+        enableCertManager: true
         serviceAccount:
           annotations:
             eks.amazonaws.com/role-arn: arn:aws:iam::825391943801:role/AmazonEKSLoadBalancerControllerRole
