@@ -14,7 +14,7 @@ spec:
     helm:
       values: |
         image:
-          tag: f644fea
+          tag: 120afd0
   destination:
     server: https://kubernetes.default.svc
     namespace: kube-system
